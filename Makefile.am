@@ -7,4 +7,3 @@ lib_LTLIBRARIES = libpola.la libobj.la
 libpola_la_SOURCES = pola.c
 libpola_la_LDFLAGS = -static
 libobj_la_SOURCES = obj.c
-libobj_la_LDFLAGS = -static

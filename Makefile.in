@@ -140,9 +140,6 @@ AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-libobj_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
-	$(libobj_la_LDFLAGS) $(LDFLAGS) -o $@
 libpola_la_LIBADD =
 am_libpola_la_OBJECTS = pola.lo
 libpola_la_OBJECTS = $(am_libpola_la_OBJECTS)
@@ -360,7 +357,6 @@ lib_LTLIBRARIES = libpola.la libobj.la
 libpola_la_SOURCES = pola.c
 libpola_la_LDFLAGS = -static
 libobj_la_SOURCES = obj.c
-libobj_la_LDFLAGS = -static
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -500,7 +496,7 @@ clean-libLTLIBRARIES:
 	}
 
 libobj.la: $(libobj_la_OBJECTS) $(libobj_la_DEPENDENCIES) $(EXTRA_libobj_la_DEPENDENCIES) 
-	$(AM_V_CCLD)$(libobj_la_LINK) -rpath $(libdir) $(libobj_la_OBJECTS) $(libobj_la_LIBADD) $(LIBS)
+	$(AM_V_CCLD)$(LINK) -rpath $(libdir) $(libobj_la_OBJECTS) $(libobj_la_LIBADD) $(LIBS)
 
 libpola.la: $(libpola_la_OBJECTS) $(libpola_la_DEPENDENCIES) $(EXTRA_libpola_la_DEPENDENCIES) 
 	$(AM_V_CCLD)$(libpola_la_LINK) -rpath $(libdir) $(libpola_la_OBJECTS) $(libpola_la_LIBADD) $(LIBS)
