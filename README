@@ -1,0 +1,19 @@
+#ABOUT PROGRAM
+
+Program for counting fields and figure surfacecs.
+As inpuit to methods, it takes the necessary side lengths.
+
+#VERSIONS
+
+In the repository you can find three versions of the file, each in a different isues.
+
+The first version of the software (issues-standard) uses autoconf, automake and 
+creates the program described in #ABOUT PROGRAM, each next version 
+also creates this program but with minor changes. 
+
+The second version (issues-extended) has two static libraries. 
+
+The latest version (issues-FULL) has a static and shared library, 
+are configured with libtool.
+
+Have fun :)
